@@ -18,12 +18,24 @@
   },
   "homepage": "https://github.com/ninaschramm/gymify#readme",
   "devDependencies": {
+    "@types/express": "^4.17.14",
     "prisma": "^4.6.0",
     "typescript": "^4.8.4"
   },
   "dependencies": {
     "@prisma/client": "^4.6.0",
+    "@types/bcrypt": "^5.0.0",
+    "@types/cors": "^2.8.12",
+    "@types/joi": "^17.2.3",
+    "@types/jsonwebtoken": "^8.5.9",
+    "@types/pg": "^8.6.5",
+    "bcrypt": "^5.1.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
     "joi": "^17.7.0",
+    "jsonwebtoken": "^8.5.1",
+    "pg": "^8.8.0",
     "ts-node": "^10.9.1"
   }
 }
