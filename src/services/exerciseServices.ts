@@ -21,3 +21,10 @@ export async function getAllExercises() {
     return exercises
 
 }
+
+export async function getExerciseById(id: number) {
+
+    const exercise = exerciseRepository.getExerciseById(id)
+    return exercise
+    
+}

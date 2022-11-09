@@ -17,3 +17,11 @@ export async function getAllExercises() {
 
     return exercises
 }   
+
+export async function getExerciseById(id: number) {
+    const exercise = await client.exercise.findFirst({
+        where: {
+            id
+        }
+    })
+}
