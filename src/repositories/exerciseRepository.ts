@@ -6,3 +6,14 @@ export async function insert(exercise: exerciseData) {
         data: exercise
     });
 }
+
+export async function getAllExercises() {
+    const exercises = await client.exercise.findMany({
+        select: {
+            id: true,
+            name: true
+        }
+    })
+
+    return exercises
+}   
