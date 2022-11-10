@@ -41,3 +41,9 @@ export async function updateExercise(id: number, exercise: {
 
     await exerciseRepository.updateExercise(id, exercise)
 }
+
+export async function deleteExercise(id: number) {
+    
+    await exerciseRepository.deleteExercise(id)
+    
+}

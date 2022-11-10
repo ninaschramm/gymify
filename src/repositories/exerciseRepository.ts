@@ -38,3 +38,13 @@ export async function updateExercise(id: number, exercise: exerciseData) {
       })
 
 }
+
+export async function deleteExercise(id: number) {
+
+    const deleteUser = await client.exercise.delete({
+        where: {
+          id
+        }
+      })      
+    
+}

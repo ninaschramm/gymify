@@ -33,3 +33,11 @@ export async function updateExercise(req: Request, res: Response) {
     return res.sendStatus(201)
 
 }
+
+export async function deleteExercise(req: Request, res: Response) {
+    
+    const id: number = parseInt(req.params.id);
+    await exerciseServices.deleteExercise(id);
+    return res.sendStatus(204)
+    
+}
