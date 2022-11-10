@@ -8,16 +8,22 @@ export async function insert(workout: workoutData) {
 }
 
 export async function getAllWorkouts() {
-    const workouts = await client.workout.findMany({        
+    const workouts = await client.workout.findMany({ 
+        select: {
+            type: true,
+        }       
     })
 
     return workouts
 }   
 
 export async function getWorkoutById(id: number) {
-    const workout = await client.workout.findFirst({
+    const workout = await client.workout_Exercise.findMany({
         where: {
-            id
+            workoutId: id
+        },
+        select: {
+            exercise: true,
         }
     })
 
