@@ -1,7 +1,8 @@
 import { Router } from "express";
+import { exerciseRouter } from "./exercisesRouter";
 
 const router = Router();
 
-// router.use()
+router.use(exerciseRouter)
 
- export { router };
+export { router };

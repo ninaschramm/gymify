@@ -17,14 +17,27 @@ export async function registerExercise(exercise: {
 
 export async function getAllExercises() {
 
-    const exercises = exerciseRepository.getAllExercises()    
+    const exercises = await exerciseRepository.getAllExercises();    
     return exercises
 
 }
 
 export async function getExerciseById(id: number) {
 
-    const exercise = exerciseRepository.getExerciseById(id)
+    const exercise = await exerciseRepository.getExerciseById(id)
     return exercise
-    
+
+}
+
+export async function updateExercise(id: number, exercise: {
+    name: string,
+    description: string
+}) {    
+    const {name, description} = exercise
+    const exerciseData: exerciseData = {
+        name,
+        description
+    }
+
+    await exerciseRepository.updateExercise(id, exercise)
 }

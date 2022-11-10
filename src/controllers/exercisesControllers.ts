@@ -11,7 +11,7 @@ export async function registerExercise(req: Request, res: Response) {
 
 export async function getAllExercises(req: Request, res: Response) {
     
-    const exercises = exerciseServices.getAllExercises()
+    const exercises = await exerciseServices.getAllExercises()
     return res.status(200).send(exercises)
 
 }
@@ -19,7 +19,17 @@ export async function getAllExercises(req: Request, res: Response) {
 export async function getExerciseById(req: Request, res: Response) {
 
     const id: number = parseInt(req.params.id);
-    const exercise = exerciseServices.getExerciseById(id)
+    const exercise = await exerciseServices.getExerciseById(id)    
     return res.status(200).send(exercise)
-    
+
+}
+
+export async function updateExercise(req: Request, res: Response) {
+
+    const id: number = parseInt(req.params.id);
+    const exercise = req.body;
+
+    await exerciseServices.updateExercise(id, exercise)
+    return res.sendStatus(201)
+
 }

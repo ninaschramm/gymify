@@ -24,4 +24,17 @@ export async function getExerciseById(id: number) {
             id
         }
     })
+
+    return exercise
+}
+
+export async function updateExercise(id: number, exercise: exerciseData) {
+
+    await client.exercise.update({
+        where: {
+          id
+        },
+        data: exercise
+      })
+
 }
