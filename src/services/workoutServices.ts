@@ -32,3 +32,9 @@ export async function deleteWorkout(id: number) {
     await workoutRepository.deleteWorkout(id)
     
 }
+
+export async function addExerciseToWorkout(exerciseId: number, workoutId: number) {
+
+    await workoutRepository.addExerciseToWorkout(exerciseId, workoutId)
+
+}

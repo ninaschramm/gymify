@@ -31,3 +31,12 @@ export async function deleteWorkout(req: Request, res: Response) {
     return res.sendStatus(204)
     
 }
+
+export async function addExerciseToWorkout(req: Request, res: Response) {
+
+    const workoutId = parseInt(req.params.id);
+    const exerciseId = req.body.id;
+    await workoutServices.addExerciseToWorkout(exerciseId, workoutId)
+    return res.sendStatus(201)
+    
+}

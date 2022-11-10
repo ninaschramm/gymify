@@ -33,3 +33,14 @@ export async function deleteWorkout(id: number) {
       })      
     
 }
+
+export async function addExerciseToWorkout(exerciseId: number, workoutId: number) {
+
+    await client.workout_Exercise.create({
+        data: {
+            workoutId,
+            exerciseId,
+        }
+    });
+
+}
