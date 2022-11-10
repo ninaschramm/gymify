@@ -8,7 +8,7 @@ const exerciseRouter = Router();
 exerciseRouter.post("/exercises", validateSchema(exerciseSchema), registerExercise)
 exerciseRouter.get("/exercises", getAllExercises)
 exerciseRouter.get(`/exercises/:id`, getExerciseById)
-exerciseRouter.post(`/exercises/:id`, updateExercise)
+exerciseRouter.post(`/exercises/:id`, validateSchema(exerciseSchema), updateExercise)
 exerciseRouter.delete(`/exercises/:id`, deleteExercise)
 
 

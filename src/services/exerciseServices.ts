@@ -1,14 +1,12 @@
-import { string } from 'joi';
 import * as exerciseRepository from '../repositories/exerciseRepository';
-import { exerciseData, NumberStringTuple } from '../types/types';
+import { exerciseData } from '../types/types';
 
 export async function registerExercise(exercise: {
     name: string,
     description: string
 }) {    
     const {name, description} = exercise
-    const exerciseData: exerciseData = {
-        name,
+    const exerciseData: exerciseData = {        name,
         description
     }
 
@@ -45,5 +43,5 @@ export async function updateExercise(id: number, exercise: {
 export async function deleteExercise(id: number) {
     
     await exerciseRepository.deleteExercise(id)
-    
+
 }

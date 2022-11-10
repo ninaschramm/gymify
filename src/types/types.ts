@@ -1,5 +1,4 @@
-import { Exercise } from "@prisma/client";
+import { Exercise, Workout } from "@prisma/client";
 
 export type exerciseData = Omit<Exercise, "id">
-
-export interface NumberStringTuple extends Array<string|number>{0:number; 1:string}
+export type workoutData = Omit<Workout, "id">
